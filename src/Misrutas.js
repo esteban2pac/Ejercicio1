@@ -7,8 +7,8 @@ export default function Misroutes(){
     return (
         <Switch>
         <Route exact path='/' component={Store}/>
-        <Route path='/About' componen={About}/> 
-        <Route path='/Cart' componen={Cart}/>
+        <Route path='/About' component={About}/> 
+        <Route path='/Cart' component={Cart}/>
         </Switch>
     );
 }
