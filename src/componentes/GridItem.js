@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import '../css/misestilos.css'
 const Griditem= (props) =>{
-    const {nombre,precio,}  = props.item
+    const {nombre,precio}  = props.items
         return(
             <div className="custom">
                 <Row>

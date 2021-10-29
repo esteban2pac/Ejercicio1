@@ -1,11 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import Row from 'react-bootstrap/Row'
-
+import ProductForm from "./ProductForm";
 import Griditem from "./GridItem";
 
 
 const Gridproduct  =()=>{
-    const item =  [
+    const itemInicial =  [
         {id:1,nombre:'Buffalo - Striploin',precio:'$39.11',},
         {id:2,nombre:'Bacardi Breezer - Tropical',precio:'$257.92'},
         {id:3,nombre:'Wine - Gato Negro Cabernet',precio:'$51.01'},
@@ -16,14 +16,25 @@ const Gridproduct  =()=>{
         {id:8,nombre:'Sour Puss Raspberry',precio:'$134.99'},
         {id:9,nombre:'Pork - Chop, Frenched',precio:'$199.16'},
     ]
+    const[items, setItems] = useState(itemInicial);
+
+    const alEnviarForm = (itemFromForm) =>{
+        const idS = items.length + 1;
+        const item = {...itemFromForm, id:idS}; 
+        setItems([...items,item]);
+    }
     return(
+        <>
         <Row>
-            {item.map((s)=>{
+            <ProductForm agregar={alEnviarForm}/>
+        </Row>
+        <Row>
+            {items.map((s)=>{
                 return(
                     <div class="col-md-4">
                     
                             <>
-                            <Griditem item={s}/>
+                            <Griditem items={s}/>
                             </>
                            
                             </div>
@@ -33,6 +44,7 @@ const Gridproduct  =()=>{
                 
             }
         </Row>
+        </>
     );
 }
 export default Gridproduct;
