@@ -13,7 +13,6 @@ export default function ProductForm(props){
 
     const onSubmitForm = ev =>{
         ev.preventDefault();
-        console.log(estadoForm);
         props.agregar(estadoForm);
         cambiarEstadoForm(estadoInicialForm);
     }
