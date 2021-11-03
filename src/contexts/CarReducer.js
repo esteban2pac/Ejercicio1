@@ -7,7 +7,7 @@ export const itemCount = (cartItems) => {
 
 export const sumTotal = (cartItems) => {
     return cartItems
-    .reduce((total, product) => total + product.price * product.quantity, 0)
+    .reduce((total, product) => total + product.precio * product.quantity, 0)
     .toFixed(2);
 };
 

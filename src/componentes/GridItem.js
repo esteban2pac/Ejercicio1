@@ -14,12 +14,10 @@ export default function GridItem(props) {
         <div className="row cardItem">
            
             <div className="card-md-6">
-                <div className="small"> {props.product.code} </div>
-                <h4> {props.product.name} </h4>
+                <h4> {props.product.nombre} </h4>
                 <div className="fs-5 mb-3">
                     <span> $ {props.product.precio} </span>
                 </div>
-                <p className="fs-5"> {props.product.description} </p>
                 <div className="d-flex">
                     {isInCart(props.product) && (
                         <button

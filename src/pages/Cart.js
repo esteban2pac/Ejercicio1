@@ -27,7 +27,7 @@ const Cart = () => {
                     {checkout && cartItems.length === 0 && (
                         <div className="p-3 text-center text-success">
                             <p>Compra realizada</p>
-                            <Link to="/catalog" className="btn btn-outline-success btn-sm" >
+                            <Link to="/" className="btn btn-outline-success btn-sm" >
                                 Comprar más...
                             </Link>
                         </div>
