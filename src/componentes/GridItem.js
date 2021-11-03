@@ -1,27 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../contexts/CartContex";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import '../css/misestilos.css'
-const Griditem= (props) =>{
-    const {nombre,precio}  = props.items
-        return(
-            <div className="custom">
-                <Row>
-                    <Col className="border border-dark">
-                        
-                        <h6>{nombre}</h6>
-                        <h2>{precio}</h2>
-                        
-                        <Button className="float-end" variant="dark">ADD TO CART</Button>{' '}
-                        <Button className="float-end" variant="light">DETAILS</Button>{' '}
-                        
-                    </Col>
-                    
-                        
-                    
-                </Row>
+export default function GridItem(props) {
+    const { addProduct, cartItems, increase } = useContext(CartContext); 
+    
+    const isInCart = (product) => {
+        return !!cartItems.find((item) => item.id === product.id);
+    };
+    return (
+        <div className="row cardItem">
+           
+            <div className="card-md-6">
+                <div className="small"> {props.product.code} </div>
+                <h4> {props.product.name} </h4>
+                <div className="fs-5 mb-3">
+                    <span> $ {props.product.precio} </span>
+                </div>
+                <p className="fs-5"> {props.product.description} </p>
+                <div className="d-flex">
+                    {isInCart(props.product) && (
+                        <button
+                            onClick={() => increase(props.product)}
+                            className="btn btn-outline-dark flex-shrink-0 float-end"
+                        >
+                            agregar mas
+                        </button>
+                    )}
+                    {!isInCart(props.product) && (
+                        <button
+                            onClick={() => addProduct(props.product)}
+                            className="btn btn-outline-dark flex-shrink-0"
+                        >
+                            agregar al carrito
+                        </button>
+                    )}
+                </div>
             </div>
-        );
+        </div>
+    );
+        
 }
-export default Griditem;

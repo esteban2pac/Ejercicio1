@@ -13,12 +13,12 @@ const CartItem = ({ product }) => {
                 />
             </div>
             <div className="col-sm-4 p-2">
-                <h5 className="mb-1"> {product.name} </h5>
-                <p className="mb-1">Price: $ {product.price} </p>
+                <h5 className="mb-1"> {product.nombre} </h5>
+                <p className="mb-1">Price: $ {product.precio} </p>
             </div>
             <div className="col-sm-2 p-2">
                 <p className="mb-1">Cant: {product.quantity} </p>
-                <p className="mb-1">Precio: $ {product.quantity * product.price} </p>
+                <p className="mb-1">Precio: $ {product.quantity * product.precio} </p>
             </div>
             <div className="col-sm-4 p-2 text-right">
                 <button

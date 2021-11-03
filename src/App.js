@@ -1,16 +1,19 @@
 import './App.css';
 import Header from './componentes/Header';
 import Container from 'react-bootstrap/Container'
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Misroutes from './Misrutas';
+import CartContextProvider from './contexts/CartContex';
 function App() {
   return (
-    <Container fluid>
+    <CartContextProvider>
       <Router>
-      <Header />
-      <Misroutes />
+        <Header />
+        <div className="container">
+          <Misroutes />
+        </div>
       </Router>
-    </Container>
+    </CartContextProvider>
   );
 }
 
