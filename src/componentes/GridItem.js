@@ -11,30 +11,41 @@ export default function GridItem(props) {
         return !!cartItems.find((item) => item.id === product.id);
     };
     return (
-        <div className="row cardItem">
-           
-            <div className="card-md-6">
-                <h4> {props.product.nombre} </h4>
-                <div className="fs-5 mb-3">
-                    <span> $ {props.product.precio} </span>
-                </div>
-                <div className="d-flex">
-                    {isInCart(props.product) && (
+        <div className="card">
+            <div className="card-body">
+                
+                    <h4 className="card-title"> {props.product.nombre} </h4>
+                    <div className="card-subtitle fs-5 mb-3">
+                        <span> $ {props.product.precio} </span>
+                    </div>
+                
+                <div className="card-text">
+                    <div className="card-link">
+                        {isInCart(props.product) && (
+                            <button
+                                onClick={() => increase(props.product)}
+                                className="btn btn-outline-dark flex-shrink-0 float-end"
+                            >
+                                Add more
+                            </button>
+                        )}
+                        {!isInCart(props.product) && (
+                            <button
+                                onClick={() => addProduct(props.product)}
+                                className="btn btn-outline-dark flex-shrink-0 float-end"
+                            >
+                                Add to cart
+                            </button>
+                        )}
+                        <div className="card-link">
                         <button
-                            onClick={() => increase(props.product)}
+                            onClick={() => { alert("Details(in construction)"); }}
                             className="btn btn-outline-dark flex-shrink-0 float-end"
                         >
-                            agregar mas
+                            Details
                         </button>
-                    )}
-                    {!isInCart(props.product) && (
-                        <button
-                            onClick={() => addProduct(props.product)}
-                            className="btn btn-outline-dark flex-shrink-0"
-                        >
-                            agregar al carrito
-                        </button>
-                    )}
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
