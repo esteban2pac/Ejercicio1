@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Row from 'react-bootstrap/Row'
-import ProductForm from "./ProductForm";
+
 import GridItem from "./GridItem";
 
 export const itemInicial = [
@@ -17,17 +17,9 @@ export const itemInicial = [
 
 const Gridproduct = () => {
     const [items, setItems] = useState(itemInicial);
-
-    const alEnviarForm = (itemFromForm) => {
-        const idS = items.length + 1;
-        const item = { ...itemFromForm, id: idS };
-        setItems([...items, item]);
-    }
         return (
             <div className="container">
-                <Row>
-                    <ProductForm agregar={alEnviarForm} />
-                </Row>
+               
                 <div className="row">
                     {items.map((gridItem, index) => {
                         return (
