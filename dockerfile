@@ -5,7 +5,7 @@ WORKDIR /app
 # cache and istall dependencies
 COPY package.json .
 COPY package-lock.json ./
-RUN npm ci 
+RUN npm i npm@latest 
 #Copy app files
 COPY . /app
 ENV CI=true
