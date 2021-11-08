@@ -8,8 +8,8 @@ COPY package-lock.json ./
 RUN npm i npm@latest 
 #Copy app files
 COPY . /app
-ENV CI=true
-ENV PORT=3000
+RUN npm run build 
+EXPOSE  3000
 
 
 CMD [ "npm", "start" ]
