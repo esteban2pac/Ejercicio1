@@ -14,14 +14,14 @@ EXPOSE  3000
 
 CMD [ "npm", "start" ]
 
-FROM development AS build 
+FROM development AS buildStage
 
 RUN npm run build
 
 # 2.for ngnix setup
 FROM nginx:alpine
 
-COPY --from=build /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=buildStage /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /usr/share/nginx/html
 
