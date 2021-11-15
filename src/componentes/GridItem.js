@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContex";
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import '../css/misestilos.css'
 export default function GridItem(props) {
@@ -38,12 +36,15 @@ export default function GridItem(props) {
                             </button>
                         )}
                         <div className="card-link">
-                        <button
+                        <Button
                             onClick={() => { alert("Details(in construction)"); }}
                             className="btn btn-outline-dark flex-shrink-0 float-end"
                         >
                             Details
-                        </button>
+                        </Button>
+                       
+                        
+                        
                     </div>
                     </div>
                 </div>

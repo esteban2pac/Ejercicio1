@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Row from 'react-bootstrap/Row'
-
 import GridItem from "./GridItem";
 
 export const itemInicial = [
@@ -16,11 +15,11 @@ export const itemInicial = [
 ]
 
 const Gridproduct = () => {
-    const [items, setItems] = useState(itemInicial);
+    const [items, ] = useState(itemInicial);
         return (
             <div className="container">
                
-                <div className="row">
+                <Row>
                     {items.map((gridItem, index) => {
                         return (
                             <div id="cardItem" className="col-md-4 p-1">
@@ -28,7 +27,8 @@ const Gridproduct = () => {
                             </div>
                         );
                     })}
-                </div>
+                    
+                </Row>
             </div>
         );
     }

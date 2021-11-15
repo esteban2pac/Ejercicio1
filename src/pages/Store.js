@@ -1,5 +1,5 @@
-import react from 'react';
-import {Link, Switch} from 'react-router-dom';
+import React from 'react';
+//import {Link, Switch} from 'react-router-dom';
 import Gridproduct from '../componentes/GridProduct';
 import Product from '../componentes/Product'; 
 export default function Store(){

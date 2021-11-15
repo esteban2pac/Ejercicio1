@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import '../css/misestilos.css'
 import { Link } from "react-router-dom";
-import CartContextProvider, { CartContext } from "../contexts/CartContex";
+import { CartContext } from "../contexts/CartContex";
 
 const Header = ()=>{
     const { itemCount } = useContext(CartContext);
@@ -35,7 +33,9 @@ const Header = ()=>{
                     </Link>
                 </li>
             </ul>
+            
         </nav>
+        
     </div>
     );
 }

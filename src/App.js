@@ -9,9 +9,9 @@ function App() {
     <CartContextProvider>
       <Router>
         <Header />
-        <div className="container">
+        <Container>
           <Misroutes />
-        </div>
+        </Container>
       </Router>
     </CartContextProvider>
   );
