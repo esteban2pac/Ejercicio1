@@ -18,16 +18,16 @@ export default function ProductForm(props){
     }
     return(
         <form onSubmit={onSubmitForm}>
-            <div class="mb-3">
+            <div className="mb-3">
                 <label htmlFor="nameProduct" className="form-label">nombre</label>
-                <input type="text" name="nombre"  class="form-control" id="nameProduct" value={estadoForm.nombre} onChange={gestionarCamposForm} />
+                <input type="text" name="nombre"  className="form-control" id="nameProduct" value={estadoForm.nombre} onChange={gestionarCamposForm} />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
                 <label htmlFor="priceProduct" className="form-label">precio</label>
-                <input type="text" name="precio" class="form-control" id="priceProduct" value={estadoForm.precio} onChange={gestionarCamposForm}/>
+                <input type="text" name="precio" className="form-control" id="priceProduct" value={estadoForm.precio} onChange={gestionarCamposForm}/>
             </div>
             
-            <div class="col-12">
+            <div className="col-12">
                 <button type="submit" className="btn btn-primary">Agregar</button>
             </div> 
         </form>

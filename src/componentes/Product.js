@@ -18,7 +18,7 @@ const Productos = () =>  {
                 </Col>
                 <Col  md={3} sm={3}>
                 <span className="form-outline">
-                    <input type="search" id="form1" class="form-control" placeholder="Search Product" aria-label="Search" />
+                    <input type="search" id="form1" className="form-control" placeholder="Search Product" aria-label="Search" />
                     </span>
                 </Col>
             </Row>

@@ -9,7 +9,7 @@ function App() {
     <CartContextProvider>
       <Router>
         <Header />
-        <div class="container-fluid">
+        <div className="container-fluid">
           <Misroutes />
         </div>
       </Router>
