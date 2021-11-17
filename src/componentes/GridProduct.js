@@ -22,7 +22,7 @@ const Gridproduct = () => {
                 <Row>
                     {items.map((gridItem, index) => {
                         return (
-                            <div id="cardItem" className="col-md-4 p-1">
+                            <div key={gridItem.id} id="cardItem" className="col-md-4 p-1">
                                 <GridItem key={gridItem.id} product={gridItem} />
                             </div>
                         );
