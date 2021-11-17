@@ -8,11 +8,12 @@ COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
 
 # Same as npm install
-RUN npm ci
+#RUN npm ci
+RUN npm i npm@latest
 
 COPY . /app
 
-ENV CI=true
+#ENV CI=true
 ENV PORT=3000
 
 CMD [ "npm", "start" ]
