@@ -27,11 +27,6 @@ const Header = ()=>{
                         Cart ({itemCount})
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link to="/Form" className="p-2 text-dark text-decoration-none">
-                        Form
-                    </Link>
-                </li>
             </ul>
             
         </nav>
