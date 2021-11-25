@@ -28,28 +28,6 @@ const Productos = () => {
                     <Button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Agregar producto
                     </Button>
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Formulario</h5>
-                                    <Button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></Button>
-                                </div>
-                                <div class="modal-body">
-                                    <div style={center}>
-                                        <Row>
-                                            <ProductForm agregar={alEnviarForm} />
-                                        </Row>
-
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <Button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</Button>
-                                    <Button type="button" class="btn btn-primary">Agregar</Button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </Col>
             </Row>
             <Row>
