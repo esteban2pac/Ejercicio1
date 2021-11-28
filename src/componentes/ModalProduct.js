@@ -1,6 +1,6 @@
 import { Modal, Container, Row } from "react-bootstrap";
-
-const ModalD = (props) => {
+import ProductForm from "./ProductForm";
+const ModalPrducts = (props) => {
     return (
         <div>
             <Modal
@@ -8,15 +8,13 @@ const ModalD = (props) => {
                 onHide={props.closeModal}
                 centered
             >
-                <Modal.Header>
-                    <Modal.Title>Detalles</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+            <Modal.Header>
+                <Modal.Title>Agregar producto(s)</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
                     <Container>
                         <Row>
-                            <p>detalles del articulo</p>
-                            <p>nombre: {props.articulo.nombre} </p>
-                            <p>precio: {props.articulo.precio} </p>
+                            <ProductForm/>
                         </Row>
                     </Container>
                 </Modal.Body>
@@ -30,6 +28,9 @@ const ModalD = (props) => {
                 </Modal.Footer>
             </Modal>
         </div>
+
     );
-};
-export default ModalD;
+
+}
+
+export default ModalPrducts;

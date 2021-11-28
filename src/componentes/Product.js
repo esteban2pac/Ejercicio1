@@ -1,11 +1,12 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { itemInicial } from "../componentes/GridProduct";
 import Button from 'react-bootstrap/Button';
-import ProductForm from "../componentes/ProductForm";
+import ModalProducts from "./ModalProduct";
+import { CartContext } from "../contexts/CartContex";
 
-const Productos = () => {
+const Productos = (props) => {
     const center = {
         textAlign: "center"
     };
@@ -14,6 +15,22 @@ const Productos = () => {
         const idS = items.length + 1;
         const item = { ...itemFromForm, id: idS };
         setItems([...items, item]);
+    }
+    const [mostrarModal, setMostrarModal] = useState(false);
+    const closeModal = () => setMostrarModal(false);
+    
+    const estadoDetalles = {
+        nombre: "",
+        precio: ""
+    }
+
+    const [detalle, setDetalle] = useState(estadoDetalles);
+
+    
+
+    const openModal = (articulo) => {
+        setMostrarModal(true);
+        setDetalle(articulo);
     }
     return (
         <Row>
@@ -25,7 +42,7 @@ const Productos = () => {
             </Col>
             <Row>
                 <Col>
-                    <Button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <Button onClick={(event) => openModal(props.product)} className="btn btn-outline-dark flex-shrink-0">
                         Agregar producto
                     </Button>
                 </Col>
@@ -40,6 +57,13 @@ const Productos = () => {
                     </span>
                 </Col>
             </Row>
+            <>
+                <ModalProducts
+                    show={mostrarModal}
+                    closeModal={closeModal}
+                    articulo={detalle}
+                />
+            </>
         </Row>
     );
 }
