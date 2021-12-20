@@ -1,7 +1,9 @@
 import React,{ useState } from "react";
+import { itemInicial } from "./GridProduct";
 
 export default function ProductForm(props){
     const estadoInicialForm = {
+        id: null,
         nombre:'',
         precio:''
     };
@@ -11,10 +13,15 @@ export default function ProductForm(props){
         cambiarEstadoForm({...estadoForm,[name]:value});
     }
 
-    const onSubmitForm = ev =>{
+    const onSubmitForm = (ev) =>{
         ev.preventDefault();
-        props.agregar(estadoForm);
+        alEnviarForm(estadoForm);
         cambiarEstadoForm(estadoInicialForm);
+    }
+    const alEnviarForm = (estado) => {
+        const idS = itemInicial.length + 10;
+        const item = { ...estado, id: idS };
+        itemInicial.push(item);
     }
     return(
         <form onSubmit={onSubmitForm}>

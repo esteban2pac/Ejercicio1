@@ -15,21 +15,21 @@ export const itemInicial = [
 ]
 
 const Gridproduct = () => {
-    const [items, ] = useState(itemInicial);
-        return (
-            <div className="container">
-               
-                <Row>
-                    {items.map((gridItem, index) => {
-                        return (
-                            <div key={gridItem.id} id="cardItem" className="col-md-4 p-1">
-                                <GridItem key={gridItem.id} product={gridItem} />
-                            </div>
-                        );
-                    })}
-                    
-                </Row>
-            </div>
-        );
-    }
-    export default Gridproduct;
+    const [items,] = useState(itemInicial);
+    return (
+        <div className="container">
+
+            <Row>
+                {items.map((gridItem, index) => {
+                    return (
+                        <div key={gridItem.id} id="cardItem" className="col-md-4 p-1">
+                            <GridItem key={gridItem.id} product={gridItem} />
+                        </div>
+                    );
+                })}
+
+            </Row>
+        </div>
+    );
+}
+export default Gridproduct;

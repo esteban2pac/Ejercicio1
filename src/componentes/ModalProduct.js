@@ -14,7 +14,7 @@ const ModalPrducts = (props) => {
             <Modal.Body>
                     <Container>
                         <Row>
-                            <ProductForm/>
+                            <ProductForm />
                         </Row>
                     </Container>
                 </Modal.Body>

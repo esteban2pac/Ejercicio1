@@ -10,12 +10,7 @@ const Productos = (props) => {
     const center = {
         textAlign: "center"
     };
-    const [items, setItems] = useState(itemInicial);
-    const alEnviarForm = (itemFromForm) => {
-        const idS = items.length + 1;
-        const item = { ...itemFromForm, id: idS };
-        setItems([...items, item]);
-    }
+    
     const [mostrarModal, setMostrarModal] = useState(false);
     const closeModal = () => setMostrarModal(false);
     

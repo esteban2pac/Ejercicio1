@@ -15,6 +15,7 @@ const ModalD = (props) => {
                     <Container>
                         <Row>
                             <p>detalles del articulo</p>
+                            <p>id: {props.articulo.id} </p>
                             <p>nombre: {props.articulo.nombre} </p>
                             <p>precio: {props.articulo.precio} </p>
                         </Row>
